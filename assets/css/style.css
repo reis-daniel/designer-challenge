@@ -1,4 +1,285 @@
+:root {
+  --clr-fnt-primary: #0b0c17;
+  --clr-accent-pink: #ff3571;
+  --clr-pages: #dddd;
+  --clr-linear-grd: #3c30ff;
+  --clr-black: #000;
+  --clr-white: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
+  color: var(--clr-fnt-primary);
 }
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100vw;
+}
+
+.header-break {
+  display: block;
+  font-size: 0.9rem;
+}
+
+img {
+  width: 100%;
+}
+
+img.emoji {
+  width: 2rem;
+}
+
+p {
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h4,
+p {
+  text-align: center;
+}
+
+.main,
+.footer {
+  padding: 0 3rem;
+}
+
+/* ====== HEADER STYLING ====== */
+
+.header {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header-bg {
+  background-image: url("../img/ilustracion1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.logo {
+  object-fit: contain;
+  height: 3rem;
+  width: 100%;
+}
+
+.logo-headline {
+  font-size: 1.5rem;
+}
+
+.scroll {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-accent-pink);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-headline {
+  font-size: 1.5rem;
+}
+
+.header-text {
+  font-size: 0.9rem;
+}
+
+.header-headline,
+.header-text {
+  padding: 0 2.25rem;
+}
+
+.preview-img {
+  object-fit: cover;
+  height: 20rem;
+}
+
+.img-animation {
+  height: 100%;
+  animation: animation 3s ease-in-out;
+}
+
+/* ====== HEADER ANIMATION ====== */
+
+@keyframes animation {
+  0% {
+    transform: translateY(-2rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+/* ====== MAIN STYLING ====== */
+
+.main-text-br {
+  display: block;
+}
+
+.section-controller {
+  margin-top: 3rem;
+}
+
+.introduction-container {
+  display: grid;
+  grid-template-areas:
+    "headline"
+    "text";
+  gap: 2rem;
+}
+
+.main-headline {
+  font-size: 2rem;
+  text-align: center;
+  grid-area: headline;
+}
+
+.main-text {
+  grid-area: text;
+  line-height: 2;
+}
+
+/* ====== Learning Section ====== */
+
+.learning-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.learning-example {
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "img"
+    "text";
+}
+
+.learning-text-container {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.learning-headline {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.learning-text {
+  font-size: 1.1rem;
+}
+
+.side-img {
+  grid-area: img;
+  height: 2.5rem;
+  width: 100%;
+}
+
+/* ====== Challenge Section ====== */
+
+.challenge-introduction {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  gap: 2rem;
+}
+
+.challenge-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.section-number {
+  font-size: 2.5rem;
+  color: var(--clr-pages);
+}
+
+.challenge-headline {
+  font-size: 1.5rem;
+}
+
+.align-items-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ====== FOOTER STYLING ====== */
+
+.footer {
+  margin-top: 3rem;
+}
+
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.input {
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.subscribe-btn {
+  height: 2rem;
+  width: 70%;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--clr-accent-pink);
+  color: var(--clr-white);
+}
+
+.footer-text {
+  display: flex;
+}
+
+.partings-words {
+  display: flex;
+  padding: 2rem 0;
+}
+
+/* ====== BREAKPOINTS ====== */
