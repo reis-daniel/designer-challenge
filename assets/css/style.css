@@ -16,6 +16,7 @@
 body {
   font-family: "Roboto", sans-serif;
   width: 100vw;
+  scroll-behavior: smooth;
 }
 
 .header-break {
@@ -33,10 +34,12 @@ img.emoji {
 
 p {
   line-height: 1.75;
+  font-weight: 300;
 }
 
 h1,
 h2,
+h3,
 h4,
 p {
   text-align: center;
@@ -44,7 +47,7 @@ p {
 
 .main,
 .footer {
-  padding: 0 3rem;
+  padding: 0 3.5rem;
 }
 
 /* ====== HEADER STYLING ====== */
@@ -104,8 +107,9 @@ p {
 }
 
 .header-headline,
-.header-text {
-  padding: 0 2.25rem;
+.header-text,
+.scroll {
+  padding: 0 3.5rem;
 }
 
 .preview-img {
@@ -197,6 +201,15 @@ p {
   width: 100%;
 }
 
+.subscribe-btn:hover {
+  background: rgb(255, 53, 113);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 53, 113, 1) 0%,
+    rgba(60, 48, 255, 1) 100%
+  );
+}
+
 /* ====== Challenge Section ====== */
 
 .challenge-introduction {
@@ -272,14 +285,243 @@ p {
   background-color: var(--clr-accent-pink);
   color: var(--clr-white);
 }
-
-.footer-text {
-  display: flex;
+.headline-br {
+  display: block;
 }
 
 .partings-words {
   display: flex;
   padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ====== BREAKPOINTS ====== */
+
+@media screen and (min-width: 768px) {
+  .main,
+  .footer {
+    padding: 0 6rem;
+  }
+  .learning-container {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+      "headline nospace"
+      "first second"
+      "third fourth";
+  }
+  .learning-container {
+    grid-auto-rows: 1fr;
+    align-items: start;
+  }
+
+  .learning-box-01 {
+    grid-area: first;
+  }
+  .learning-box-02 {
+    grid-area: third;
+  }
+  .learning-box-03 {
+    grid-area: second;
+  }
+  .learning-box-04 {
+    grid-area: fourth;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .header-content {
+    width: 100%;
+    text-align: left;
+    margin-top: 10%;
+    align-items: flex-start;
+  }
+
+  .header-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 55%;
+    height: auto;
+  }
+
+  .header-break {
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
+
+  .header-headline,
+  .header-text,
+  .scroll {
+    padding: 0 4.5rem;
+    text-align: left;
+  }
+
+  .header-headline {
+    font-size: 4rem;
+  }
+  .header-text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    width: 30%;
+  }
+
+  .preview-img {
+    width: 100%;
+  }
+
+  .logo {
+    height: 2rem;
+    width: 2rem;
+    position: fixed;
+    top: 0.5rem;
+    margin-top: 1.5rem;
+    left: 1rem;
+  }
+
+  .logo-headline {
+    margin-left: 3rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .logo-container {
+    position: relative;
+    gap: 0.5rem;
+  }
+
+  .main-headline {
+    font-size: 2.8rem;
+    text-align: left;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .scroll {
+    margin: 5rem 0;
+  }
+
+  .section-controller {
+    margin-top: 10rem;
+  }
+
+  .section-controller:first-child {
+    margin-top: 18rem;
+  }
+
+  .introduction-container {
+    display: grid;
+    grid-auto-rows: 1r;
+    gap: 5rem;
+    grid-template-areas: "headline text text";
+  }
+
+  .introduction-container > * {
+    text-align: left;
+  }
+
+  .introduction-container .main-headline {
+    grid-area: headline;
+  }
+
+  .introduction-container .main-text {
+    grid-area: text;
+    margin-right: 5rem;
+  }
+
+  .learning-container > .main-headline {
+    margin-bottom: 2rem;
+  }
+
+  .learning-example {
+    grid-template-areas: "img text";
+  }
+  .learning-text-container {
+    align-items: flex-start;
+  }
+  .learning-text {
+    text-align: left;
+  }
+  .challenge-introduction {
+    align-items: center;
+  }
+  .challenge-text {
+    width: 60%;
+    text-align: left;
+  }
+  .main-text-br {
+    display: inline;
+  }
+  .section-center {
+    display: grid;
+    gap: 3rem;
+    grid-template-areas:
+      "img page"
+      "img emoji"
+      "img headline"
+      "img text";
+  }
+  .challenge-container {
+    gap: 4rem;
+  }
+
+  .challenge-img {
+    grid-area: img;
+  }
+  .section-number {
+    grid-area: page;
+    text-align: left;
+  }
+  .challenge-emoji {
+    grid-area: emoji;
+    text-align: left;
+  }
+  .challenge-headline {
+    text-align: left;
+  }
+  .section-center > .challenge-text {
+    grid-area: text;
+    width: 100%;
+  }
+  .section-solution,
+  .section-share {
+    display: grid;
+    gap: 3rem;
+    grid-template-areas:
+      "page img"
+      "emoji img"
+      "headline img"
+      "text img";
+  }
+  .footer-subscribe {
+    margin-top: 9rem;
+    align-items: center;
+  }
+  .form {
+    width: 100%;
+  }
+  .input {
+    width: 40%;
+    height: 4rem;
+  }
+  .subscribe-btn {
+    width: 15%;
+    height: 3rem;
+  }
+  .partings-words {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
